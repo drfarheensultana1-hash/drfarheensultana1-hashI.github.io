@@ -1,315 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MindMedic Clinic</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="css/styles.css">
 
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-700">
 
-<header class="header">
+<!-- NAVBAR -->
 
-<div class="container nav-wrapper">
+<header class="bg-white shadow-sm">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-<div class="logo">
-<h2>MindMedic</h2>
-<span>Clinic & Rehabilitation Center</span>
+<div>
+<h1 class="text-xl font-bold text-gray-800">MindMedic</h1>
+<p class="text-xs text-gray-500">Clinic & Rehabilitation Center</p>
 </div>
 
-<nav>
-<ul class="nav-links">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Our Doctor</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
+<nav class="hidden md:flex space-x-6 text-sm">
+<a href="#" class="hover:text-blue-600">Home</a>
+<a href="#">About Us</a>
+<a href="#">Services</a>
+<a href="#">Our Doctor</a>
+<a href="#">Contact</a>
 </nav>
 
-<a class="btn primary">Book Appointment</a>
+<button class="bg-orange-400 text-white px-4 py-2 rounded-md text-sm">
+Book Appointment
+</button>
 
 </div>
-
 </header>
 
+<!-- HERO -->
 
-<section class="hero container">
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-<div class="hero-text">
+<div>
+<h1 class="text-4xl font-bold text-gray-800 leading-tight">
+Your Journey to <br>
+Mental Wellness <br>
+Starts Here
+</h1>
 
-<h1>Your Journey to Mental Wellness Starts Here</h1>
-
-<p>
-Comprehensive mental health care and rehabilitation services
-with compassionate, evidence-based treatment approaches.
+<p class="mt-4 text-gray-500">
+Comprehensive mental health care and rehabilitation services with compassionate, evidence-based treatment approaches.
 </p>
 
-<div class="hero-buttons">
-<a class="btn primary">Book an Appointment</a>
-<a class="btn light">Learn More</a>
+<div class="mt-6 flex gap-4">
+<button class="bg-orange-400 text-white px-6 py-3 rounded-md">
+Book an Appointment
+</button>
+
+<button class="border px-6 py-3 rounded-md">
+Learn More
+</button>
 </div>
 
 </div>
 
-<div class="hero-image">
-<img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0">
-</div>
+<img src="images/hero.jpg" class="rounded-lg shadow">
 
+</div>
 </section>
 
+<!-- TWO CENTERS -->
 
-<section class="centers">
+<section class="py-16 bg-white">
+<div class="max-w-6xl mx-auto text-center px-6">
 
-<div class="container">
+<h2 class="text-2xl font-bold text-gray-800">
+Two Centers, One Mission
+</h2>
 
-<h2>Two Centers, One Mission</h2>
-
-<p class="subtitle">
+<p class="text-gray-500 mt-2">
 We provide comprehensive care through our specialized facilities
 </p>
 
-<div class="card-grid">
+<div class="grid md:grid-cols-2 gap-8 mt-10">
 
-<div class="card">
-<h3>Mindmedic Clinic</h3>
-
-<p class="tag">Mental Health & Psychiatric Care</p>
-
-<p>
-Specialized in therapy, counseling, and psychiatric treatment
-using evidence-based approaches including CBT, psychoanalytic
-therapy, and mindfulness techniques.
+<div class="border rounded-lg p-6 text-left">
+<h3 class="font-semibold text-lg">Mindmedic Clinic</h3>
+<p class="text-sm text-gray-500 mt-2">
+Mental Health & Psychiatric Care
 </p>
 
-<a>Learn More</a>
-
-</div>
-
-<div class="card">
-<h3>MM Rehabilitation Center</h3>
-
-<p class="tag">Addiction Recovery & Rehabilitation</p>
-
-<p>
-Comprehensive rehabilitation programs for drug, alcohol, and
-behavioral addictions with detoxification, counseling, and
-relapse prevention support.
+<p class="text-sm mt-3 text-gray-500">
+Specialized therapy, counseling and psychiatric treatment using evidence-based approaches.
 </p>
 
-<a>Learn More</a>
+<button class="mt-4 border px-4 py-2 rounded">
+Learn More
+</button>
+</div>
 
+<div class="border rounded-lg p-6 text-left">
+<h3 class="font-semibold text-lg">MM Rehabilitation Center</h3>
+<p class="text-sm text-gray-500 mt-2">
+Addiction Recovery & Rehabilitation
+</p>
+
+<p class="text-sm mt-3 text-gray-500">
+Comprehensive programs for drug, alcohol, and behavioral addictions.
+</p>
+
+<button class="mt-4 border px-4 py-2 rounded">
+Learn More
+</button>
 </div>
 
 </div>
-
 </div>
-
 </section>
 
+<!-- SERVICES -->
 
-<section class="services container">
+<section class="py-16">
+<div class="max-w-6xl mx-auto px-6 text-center">
 
-<h2>Our Services</h2>
-
-<p class="subtitle">
+<h2 class="text-2xl font-bold text-gray-800">Our Services</h2>
+<p class="text-gray-500 mt-2">
 Comprehensive care tailored to your unique needs
 </p>
 
-<div class="services-grid">
+<div class="grid md:grid-cols-3 gap-6 mt-10">
 
-<div class="service">
+<div class="service-card">
 <h4>Depression & Anxiety</h4>
 <p>Professional counseling and treatment for mood disorders</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h4>Couples Counseling</h4>
 <p>Strengthen relationships through guided therapy sessions</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h4>Addiction Recovery</h4>
-<p>Comprehensive rehabilitation and relapse prevention programs</p>
+<p>Comprehensive rehabilitation and relapse prevention</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h4>Psychotherapy</h4>
 <p>Evidence-based therapeutic approaches for lasting change</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h4>Family Therapy</h4>
 <p>Support for families navigating mental health challenges</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h4>Psychiatric Care</h4>
 <p>Expert psychiatric evaluation and medication management</p>
 </div>
 
 </div>
 
-<div class="center-btn">
-<a class="btn primary">View All Services</a>
-</div>
+<button class="mt-10 bg-orange-400 text-white px-6 py-3 rounded-md">
+View All Services
+</button>
 
+</div>
 </section>
 
+<!-- DOCTOR -->
 
-<section class="doctor container">
+<section class="py-16 bg-white">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-<div class="doctor-img">
-<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2">
-</div>
-
-<div class="doctor-text">
-
-<h2>Meet Our Expert</h2>
-
-<h3>Dr. Farheen Sultana</h3>
-
-<p class="tag">Specialist in Psychiatry and Psychotherapy</p>
-
-<p>
-Dr. Farheen Sultana brings extensive experience in psychiatry
-and psychotherapy, having trained in leading hospitals and
-mental health programs in Hyderabad.
-Her compassionate approach combines evidence-based treatments
-with personalized care to help patients achieve lasting wellness.
-</p>
-
-<div class="hero-buttons">
-<a class="btn primary">Book a Consultation</a>
-<a class="btn light">Learn More</a>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="testimonials">
-
-<div class="container">
-
-<h2>What Our Patients Say</h2>
-
-<p class="subtitle">Real stories of recovery and transformation</p>
-
-<div class="testimonial-grid">
-
-<div class="testimonial">
-<p>
-"The compassionate care I received at MindMedic helped me overcome
-years of anxiety. Dr. Sultana's approach made all the difference."
-</p>
-<strong>— Priya M.</strong>
-</div>
-
-<div class="testimonial">
-<p>
-"The rehabilitation program at MM Center gave me the tools and
-support I needed to overcome addiction."
-</p>
-<strong>— Rajesh K.</strong>
-</div>
-
-<div class="testimonial">
-<p>
-"Couples counseling saved our marriage. Highly recommend their services."
-</p>
-<strong>— Anita & Suresh</strong>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="cta">
-
-<div class="container">
-
-<h2>Ready to Begin Your Healing Journey?</h2>
-
-<p>
-Take the first step towards better mental health and wellness.
-Our team is here to support you every step of the way.
-</p>
-
-<a class="btn primary">Book an Appointment</a>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container footer-grid">
+<img src="images/doctor.jpg" class="rounded-lg">
 
 <div>
 
-<h3>MindMedic</h3>
+<h2 class="text-2xl font-bold text-gray-800">Meet Our Expert</h2>
 
-<p>
-Comprehensive mental health care and rehabilitation services
-for individuals and families seeking recovery and wellness.
+<h3 class="text-blue-600 font-semibold mt-2">
+Dr. Farheen Sultana
+</h3>
+
+<p class="text-sm text-gray-500 mt-3">
+Specialist in Psychiatry and Psychotherapy with extensive experience helping patients recover through evidence-based treatment and compassionate care.
 </p>
 
-<p>
-SG573-2W, Saidabad Colony Rd,
-Kumarguda, Saidabad,
-Hyderabad, Telangana 500059
-</p>
+<div class="mt-6 flex gap-4">
+<button class="bg-orange-400 text-white px-6 py-3 rounded-md">
+Book a Consultation
+</button>
 
-<p>+91 90144 48699</p>
-<p>drfarheensultana1@gmail.com</p>
+<button class="border px-6 py-3 rounded-md">
+Learn More
+</button>
+</div>
 
 </div>
 
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="py-16">
+<div class="max-w-6xl mx-auto px-6 text-center">
+
+<h2 class="text-2xl font-bold text-gray-800">
+What Our Patients Say
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6 mt-10">
+
+<div class="testimonial">
+<p>
+“The compassionate care I received helped me overcome years of anxiety.”
+</p>
+<span>— Priya M.</span>
+</div>
+
+<div class="testimonial">
+<p>
+“The rehab program gave me the tools and support I needed to recover.”
+</p>
+<span>— Rajesh K.</span>
+</div>
+
+<div class="testimonial">
+<p>
+“Couples counseling helped us communicate better and rebuild our relationship.”
+</p>
+<span>— Anita & Suresh</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+
+<section class="bg-blue-800 text-white py-16">
+<div class="max-w-6xl mx-auto px-6 text-center">
+
+<h2 class="text-3xl font-bold">
+Ready to Begin Your Healing Journey?
+</h2>
+
+<p class="mt-3 text-blue-100">
+Take the first step toward better mental health and wellness.
+</p>
+
+<button class="mt-6 bg-orange-400 px-6 py-3 rounded-md">
+Book an Appointment
+</button>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-blue-900 text-blue-100 py-12">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
 <div>
+<h3 class="font-semibold text-white">MindMedic</h3>
+<p class="text-sm mt-2">
+Comprehensive mental health and rehabilitation services.
+</p>
+</div>
 
-<h3>Quick Links</h3>
-
-<ul>
+<div>
+<h3 class="font-semibold text-white">Quick Links</h3>
+<ul class="mt-3 space-y-2 text-sm">
 <li>Home</li>
-<li>About MindMedic Clinic</li>
-<li>About MM Rehabilitation Center</li>
-<li>Mental Health Services</li>
-<li>Rehabilitation Services</li>
-<li>Our Doctor</li>
+<li>About</li>
+<li>Services</li>
+<li>Doctor</li>
 </ul>
-
 </div>
 
 <div>
+<h3 class="font-semibold text-white">Get in Touch</h3>
+<button class="mt-4 bg-orange-400 px-5 py-2 rounded">
+Book Appointment
+</button>
+</div>
 
-<h3>Get In Touch</h3>
+</div>
 
-<p>
-Ready to take the first step towards wellness?
-Book an appointment or reach out to us.
+<p class="text-center text-sm mt-8 text-blue-200">
+© 2026 MindMedic Clinic
 </p>
-
-<a class="btn primary">Book Appointment</a>
-
-</div>
-
-</div>
 
 </footer>
 
-
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
