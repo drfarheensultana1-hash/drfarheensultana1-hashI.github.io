@@ -1,12 +1,2 @@
-// Example: smooth scroll
-
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-anchor.addEventListener("click", function(e) {
-e.preventDefault();
-
-document.querySelector(this.getAttribute("href"))
-.scrollIntoView({
-behavior: "smooth"
-});
-});
-});
+// Mobile menu or future interactions
+console.log("MindMedic website loaded");
