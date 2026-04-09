@@ -1,3 +1,11 @@
+.card{
+border:1px solid #e5e7eb;
+padding:24px;
+border-radius:10px;
+background:white;
+text-align:left;
+}
+
 .service-card{
 border:1px solid #e5e7eb;
 padding:24px;
