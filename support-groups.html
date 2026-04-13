@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Groups — MindMedic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#2D6A4F;--green-light:#52B788;--green-pale:#D8F3DC;--green-dark:#1B4332;--cream:#F9F6F1;--white:#FFFFFF;--text:#1A1A1A;--text-muted:#6B6560;--border:rgba(45,106,79,0.12);--shadow:0 8px 40px rgba(27,67,50,0.10)}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(249,246,241,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green-dark)}.logo-icon{width:36px;height:36px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center}.logo-icon svg{width:18px;height:18px;fill:#fff}.logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:600}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-pale);color:var(--green-dark);padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}.back-btn:hover{background:var(--green);color:#fff}
+.hero{background:linear-gradient(135deg,#4a1a3a 0%,#8f2d6a 100%);color:#fff;padding:80px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-60px;top:-60px;width:400px;height:400px;background:rgba(255,255,255,0.04);border-radius:50%}
+.hero-tag{display:inline-block;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:600;line-height:1.15;margin-bottom:20px}
+.hero p{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.75);max-width:600px;margin-bottom:36px}
+.hero-icon{font-size:80px;position:absolute;right:120px;top:50%;transform:translateY(-50%);opacity:0.2}
+.btn-white{background:#fff;color:#8f2d6a;border:none;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:transform 0.15s;box-shadow:0 4px 20px rgba(0,0,0,0.15)}.btn-white:hover{transform:translateY(-2px)}
+main{max-width:1100px;margin:0 auto;padding:80px 60px}
+.section-tag{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:block}
+.section-heading{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--green-dark);margin-bottom:16px;line-height:1.2}
+.intro-text{font-size:17px;line-height:1.8;color:var(--text-muted);margin-bottom:60px;max-width:720px}
+.groups-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:70px}
+.group-card{background:var(--white);border-radius:20px;padding:32px;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s;display:flex;gap:20px;align-items:flex-start}.group-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.group-icon{font-size:36px;flex-shrink:0}
+.group-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--green-dark);margin-bottom:8px}
+.group-desc{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:14px}
+.group-meta{display:flex;gap:12px;flex-wrap:wrap}
+.meta-tag{background:var(--green-pale);color:var(--green-dark);font-size:12px;font-weight:500;padding:4px 12px;border-radius:100px}
+.benefits-section{background:var(--green-dark);border-radius:32px;padding:60px;color:#fff;margin-bottom:60px}
+.benefits-section .section-tag{color:var(--green-light)}.benefits-section .section-heading{color:#fff}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.benefit{background:rgba(255,255,255,0.07);border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.1);text-align:center}
+.benefit-icon{font-size:32px;margin-bottom:14px}.benefit-title{font-weight:600;font-size:15px;color:#fff;margin-bottom:8px}.benefit-desc{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6}
+.faq-item{background:var(--white);border-radius:16px;border:1px solid var(--border);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:20px 24px;font-weight:600;font-size:15px;color:var(--green-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.2s}.faq-q:hover{background:var(--green-pale)}
+.faq-a{padding:0 24px 20px;font-size:14px;color:var(--text-muted);line-height:1.7;display:none}.faq-a.open{display:block}
+.cta-bar{background:var(--green);border-radius:24px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta-bar h3{font-family:'Playfair Display',serif;font-size:28px;color:#fff;max-width:500px;line-height:1.3}
+.btn-cta{background:#fff;color:var(--green);border:none;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap;transition:transform 0.15s}.btn-cta:hover{transform:translateY(-2px)}
+footer{padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-muted)}footer a{color:var(--green);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="mindmedic.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9.76 2 8 3.76 8 6c0 1.68.94 3.14 2.32 3.88C7.84 11.04 6 13.35 6 16h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-2.65-1.84-4.96-4.32-6.12C15.06 9.14 16 7.68 16 6c0-2.24-1.76-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg></div><span class="logo-text">MindMedic</span></a>
+  <a href="mindmedic.html" class="back-btn">← Back to Home</a>
+</nav>
+<div class="hero">
+  <div class="hero-tag">Our Services</div>
+  <h1>Support Groups</h1>
+  <p>Healing happens in community. Our facilitated support groups bring together people on similar journeys to share, connect, and grow — because no one should have to face their challenges alone.</p>
+  <a href="mindmedic.html#contact" class="btn-white">Find a Group</a>
+  <div class="hero-icon">🤝</div>
+</div>
+<main>
+  <span class="section-tag">Our Groups</span>
+  <h2 class="section-heading">Support Groups We Offer</h2>
+  <p class="intro-text">All our groups are facilitated by experienced mental health professionals in a safe, confidential, and non-judgmental environment. Groups run weekly and are open to both current patients and community members.</p>
+  <div class="groups-grid">
+    <div class="group-card"><div class="group-icon">😔</div><div><div class="group-name">Anxiety & Depression Support</div><p class="group-desc">A safe space for individuals managing anxiety and depression to share experiences, learn coping strategies, and find mutual support.</p><div class="group-meta"><span class="meta-tag">Weekly · Tue 6pm</span><span class="meta-tag">8–12 members</span></div></div></div>
+    <div class="group-card"><div class="group-icon">🌿</div><div><div class="group-name">Addiction Recovery Circle</div><p class="group-desc">Peer-led recovery support for those maintaining sobriety, with professional facilitation and relapse prevention strategies.</p><div class="group-meta"><span class="meta-tag">Weekly · Mon & Thu 7pm</span><span class="meta-tag">10–15 members</span></div></div></div>
+    <div class="group-card"><div class="group-icon">🛡️</div><div><div class="group-name">Trauma Survivors Group</div><p class="group-desc">Trauma-informed group therapy for survivors of abuse, accidents, and other traumatic events, facilitated by a certified trauma therapist.</p><div class="group-meta"><span class="meta-tag">Weekly · Wed 5:30pm</span><span class="meta-tag">6–10 members</span></div></div></div>
+    <div class="group-card"><div class="group-icon">👨‍👩‍👧</div><div><div class="group-name">Family & Carers Support</div><p class="group-desc">Support for families and carers of individuals with mental health conditions — managing stress, setting boundaries, and finding community.</p><div class="group-meta"><span class="meta-tag">Fortnightly · Sat 10am</span><span class="meta-tag">8–14 members</span></div></div></div>
+    <div class="group-card"><div class="group-icon">🌱</div><div><div class="group-name">Grief & Loss Group</div><p class="group-desc">A compassionate space to process grief from bereavement, relationship loss, or life transitions, with guided support from a grief counsellor.</p><div class="group-meta"><span class="meta-tag">Weekly · Fri 5pm</span><span class="meta-tag">6–10 members</span></div></div></div>
+    <div class="group-card"><div class="group-icon">💪</div><div><div class="group-name">Resilience & Wellness</div><p class="group-desc">A positive psychology group focused on building resilience, mindfulness practices, and long-term emotional wellbeing skills.</p><div class="group-meta"><span class="meta-tag">Weekly · Sat 9am</span><span class="meta-tag">10–16 members</span></div></div></div>
+  </div>
+  <div class="benefits-section">
+    <span class="section-tag">Why Group Therapy Works</span>
+    <h2 class="section-heading">The Power of Shared Healing</h2>
+    <div class="benefits-grid">
+      <div class="benefit"><div class="benefit-icon">🔗</div><div class="benefit-title">Reduce Isolation</div><div class="benefit-desc">Realise you are not alone. Connecting with others who truly understand can be profoundly healing.</div></div>
+      <div class="benefit"><div class="benefit-icon">💡</div><div class="benefit-title">Gain New Perspectives</div><div class="benefit-desc">Hear how others cope and solve problems — insights that individual therapy alone may not provide.</div></div>
+      <div class="benefit"><div class="benefit-icon">🤝</div><div class="benefit-title">Build Accountability</div><div class="benefit-desc">The group creates a gentle sense of accountability that motivates real, lasting change in your life.</div></div>
+    </div>
+  </div>
+  <div style="margin-bottom:60px">
+    <span class="section-tag">FAQs</span>
+    <h2 class="section-heading" style="margin-bottom:32px">Common Questions</h2>
+    <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Do I need to be a current patient to join a group? <span>+</span></div><div class="faq-a">No. Our support groups are open to the wider community. You do not need to be an existing MindMedic patient. A brief phone screening is conducted before joining to ensure the group is the right fit for you.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Is everything shared in the group kept confidential? <span>+</span></div><div class="faq-a">Confidentiality is a core ground rule of all our groups. All members agree to keep what is shared within the group. The facilitator will also explain the rare exceptions required by law at the first session.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Can I attend both individual therapy and a support group? <span>+</span></div><div class="faq-a">Absolutely — and we often recommend it. Group and individual therapy work powerfully in combination. Many of our clients find that group sessions complement and accelerate the work done in their individual sessions.</div></div>
+  </div>
+  <div class="cta-bar"><h3>Find your community. Start healing together.</h3><a href="mindmedic.html#contact" class="btn-cta">Join a Group →</a></div>
+</main>
+<footer><span>© 2025 MindMedic Clinic & Rehabilitation Center</span><span>📍 Saidabad Colony Rd, Kurmaguda, Hyderabad &nbsp;|&nbsp; 📞 090144 42869</span><a href="mindmedic.html">← Home</a></footer>
+<script>function toggle(el){const a=el.nextElementSibling;a.classList.toggle('open');el.querySelector('span').textContent=a.classList.contains('open')?'−':'+';}</script>
+</body></html>

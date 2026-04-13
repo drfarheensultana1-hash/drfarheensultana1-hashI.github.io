@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sleep Medicine — MindMedic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#2D6A4F;--green-light:#52B788;--green-pale:#D8F3DC;--green-dark:#1B4332;--cream:#F9F6F1;--white:#FFFFFF;--text:#1A1A1A;--text-muted:#6B6560;--border:rgba(45,106,79,0.12);--shadow:0 8px 40px rgba(27,67,50,0.10)}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(249,246,241,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green-dark)}.logo-icon{width:36px;height:36px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center}.logo-icon svg{width:18px;height:18px;fill:#fff}.logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:600}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-pale);color:var(--green-dark);padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}.back-btn:hover{background:var(--green);color:#fff}
+.hero{background:linear-gradient(135deg,#1a1a4c 0%,#2d2d8f 100%);color:#fff;padding:80px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-60px;top:-60px;width:400px;height:400px;background:rgba(255,255,255,0.04);border-radius:50%}
+.hero-tag{display:inline-block;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:600;line-height:1.15;margin-bottom:20px}
+.hero p{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.75);max-width:600px;margin-bottom:36px}
+.hero-icon{font-size:80px;position:absolute;right:120px;top:50%;transform:translateY(-50%);opacity:0.2}
+.btn-white{background:#fff;color:#2d2d8f;border:none;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:transform 0.15s;box-shadow:0 4px 20px rgba(0,0,0,0.15)}.btn-white:hover{transform:translateY(-2px)}
+main{max-width:1100px;margin:0 auto;padding:80px 60px}
+.section-tag{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:block}
+.section-heading{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--green-dark);margin-bottom:16px;line-height:1.2}
+.intro-text{font-size:17px;line-height:1.8;color:var(--text-muted);margin-bottom:60px;max-width:720px}
+.conditions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:70px}
+.cond-card{background:var(--white);border-radius:20px;padding:28px 24px;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s}.cond-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cond-icon{font-size:28px;margin-bottom:14px}.cond-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--green-dark);margin-bottom:8px}.cond-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
+.symptoms-section{background:#1a1a4c;border-radius:32px;padding:60px;color:#fff;margin-bottom:60px}
+.symptoms-section .section-tag{color:#9999ff}
+.symptoms-section .section-heading{color:#fff}
+.symptoms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+.symptom{background:rgba(255,255,255,0.07);border-radius:14px;padding:20px 24px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:14px}
+.symptom-icon{font-size:22px;flex-shrink:0}
+.symptom-text{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.5}
+.process-section{background:var(--green-pale);border-radius:32px;padding:60px;margin-bottom:60px}
+.process-section .section-heading{color:var(--green-dark)}
+.process-steps{display:flex;flex-direction:column;gap:16px;margin-top:36px}
+.proc-step{background:var(--white);border-radius:16px;padding:24px;display:flex;gap:20px;align-items:flex-start}
+.proc-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--green);flex-shrink:0;line-height:1}
+.proc-title{font-weight:600;font-size:16px;color:var(--green-dark);margin-bottom:6px}
+.proc-desc{font-size:14px;color:var(--text-muted);line-height:1.6}
+.cta-bar{background:var(--green);border-radius:24px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta-bar h3{font-family:'Playfair Display',serif;font-size:28px;color:#fff;max-width:500px;line-height:1.3}
+.btn-cta{background:#fff;color:var(--green);border:none;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap;transition:transform 0.15s}.btn-cta:hover{transform:translateY(-2px)}
+footer{padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-muted)}footer a{color:var(--green);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="mindmedic.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9.76 2 8 3.76 8 6c0 1.68.94 3.14 2.32 3.88C7.84 11.04 6 13.35 6 16h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-2.65-1.84-4.96-4.32-6.12C15.06 9.14 16 7.68 16 6c0-2.24-1.76-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg></div><span class="logo-text">MindMedic</span></a>
+  <a href="mindmedic.html" class="back-btn">← Back to Home</a>
+</nav>
+<div class="hero">
+  <div class="hero-tag">Our Services</div>
+  <h1>Sleep Medicine</h1>
+  <p>Comprehensive diagnosis and treatment for sleep disorders that disrupt your health, energy, and quality of life — so you can finally get the rest your mind and body deserve.</p>
+  <a href="mindmedic.html#contact" class="btn-white">Book a Sleep Consultation</a>
+  <div class="hero-icon">😴</div>
+</div>
+<main>
+  <span class="section-tag">Sleep Disorders We Treat</span>
+  <h2 class="section-heading">Conditions We Specialise In</h2>
+  <p class="intro-text">Poor sleep affects every aspect of your health — mood, cognition, immunity, and longevity. Our sleep specialists use advanced diagnostics to identify and treat the root cause of your sleep problems.</p>
+  <div class="conditions-grid">
+    <div class="cond-card"><div class="cond-icon">💤</div><div class="cond-name">Sleep Apnoea</div><p class="cond-desc">Diagnosis and management of obstructive and central sleep apnoea with CPAP therapy, oral appliances, and lifestyle modification.</p></div>
+    <div class="cond-card"><div class="cond-icon">🌙</div><div class="cond-name">Insomnia</div><p class="cond-desc">CBT-I (Cognitive Behavioural Therapy for Insomnia) — the gold-standard, drug-free treatment for chronic insomnia disorders.</p></div>
+    <div class="cond-card"><div class="cond-icon">🦵</div><div class="cond-name">Restless Leg Syndrome</div><p class="cond-desc">Assessment and treatment of RLS and periodic limb movement disorder to restore comfortable, uninterrupted sleep.</p></div>
+    <div class="cond-card"><div class="cond-icon">😵</div><div class="cond-name">Narcolepsy</div><p class="cond-desc">Specialist diagnosis of narcolepsy and hypersomnia conditions with tailored medication and lifestyle management plans.</p></div>
+    <div class="cond-card"><div class="cond-icon">🕐</div><div class="cond-name">Circadian Rhythm Disorders</div><p class="cond-desc">Shift work disorder, delayed sleep phase syndrome, and jet lag treated with light therapy and chronotherapy.</p></div>
+    <div class="cond-card"><div class="cond-icon">👻</div><div class="cond-name">Parasomnias</div><p class="cond-desc">Evaluation and treatment of sleepwalking, night terrors, REM sleep behaviour disorder, and sleep paralysis.</p></div>
+  </div>
+  <div class="symptoms-section">
+    <span class="section-tag">Warning Signs</span>
+    <h2 class="section-heading">When Should You Seek Help?</h2>
+    <div class="symptoms-grid">
+      <div class="symptom"><div class="symptom-icon">😫</div><div class="symptom-text">Feeling unrefreshed after a full night's sleep most mornings</div></div>
+      <div class="symptom"><div class="symptom-icon">😴</div><div class="symptom-text">Excessive daytime sleepiness that affects work or driving</div></div>
+      <div class="symptom"><div class="symptom-icon">⏰</div><div class="symptom-text">Taking more than 30 minutes to fall asleep on most nights</div></div>
+      <div class="symptom"><div class="symptom-icon">😤</div><div class="symptom-text">Loud snoring or gasping episodes reported by a partner</div></div>
+      <div class="symptom"><div class="symptom-icon">🧠</div><div class="symptom-text">Difficulty concentrating or memory problems due to poor sleep</div></div>
+      <div class="symptom"><div class="symptom-icon">😟</div><div class="symptom-text">Anxiety about going to bed or fear of not being able to sleep</div></div>
+    </div>
+  </div>
+  <div class="process-section">
+    <span class="section-tag">Diagnostic Process</span>
+    <h2 class="section-heading">How We Diagnose Your Sleep Issues</h2>
+    <div class="process-steps">
+      <div class="proc-step"><div class="proc-num">01</div><div><div class="proc-title">Sleep History Consultation</div><div class="proc-desc">A detailed review of your sleep patterns, medical history, medications, and lifestyle factors that may be affecting your sleep.</div></div></div>
+      <div class="proc-step"><div class="proc-num">02</div><div><div class="proc-title">Sleep Diary & Questionnaires</div><div class="proc-desc">Validated sleep assessment tools and a 1–2 week sleep diary to objectively capture your sleep patterns and problem areas.</div></div></div>
+      <div class="proc-step"><div class="proc-num">03</div><div><div class="proc-title">Overnight Sleep Study (PSG)</div><div class="proc-desc">If indicated, a comprehensive overnight polysomnography study to monitor brain waves, oxygen levels, and body movements during sleep.</div></div></div>
+      <div class="proc-step"><div class="proc-num">04</div><div><div class="proc-title">Personalised Treatment Plan</div><div class="proc-desc">A tailored programme combining behavioural interventions, therapy, and where appropriate, medical treatment to restore healthy sleep.</div></div></div>
+    </div>
+  </div>
+  <div class="cta-bar"><h3>Better sleep is possible. Let our specialists help you get there.</h3><a href="mindmedic.html#contact" class="btn-cta">Book Appointment →</a></div>
+</main>
+<footer><span>© 2025 MindMedic Clinic & Rehabilitation Center</span><span>📍 Saidabad Colony Rd, Kurmaguda, Hyderabad &nbsp;|&nbsp; 📞 090144 42869</span><a href="mindmedic.html">← Home</a></footer>
+</body></html>

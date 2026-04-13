@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addiction Recovery — MindMedic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#2D6A4F;--green-light:#52B788;--green-pale:#D8F3DC;--green-dark:#1B4332;--cream:#F9F6F1;--white:#FFFFFF;--text:#1A1A1A;--text-muted:#6B6560;--border:rgba(45,106,79,0.12);--shadow:0 8px 40px rgba(27,67,50,0.10)}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(249,246,241,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green-dark)}.logo-icon{width:36px;height:36px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center}.logo-icon svg{width:18px;height:18px;fill:#fff}.logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:600}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-pale);color:var(--green-dark);padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}.back-btn:hover{background:var(--green);color:#fff}
+.hero{background:linear-gradient(135deg,#2d4a1b 0%,#52882d 100%);color:#fff;padding:80px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-60px;top:-60px;width:400px;height:400px;background:rgba(255,255,255,0.04);border-radius:50%}
+.hero-tag{display:inline-block;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:600;line-height:1.15;margin-bottom:20px}
+.hero p{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.75);max-width:600px;margin-bottom:36px}
+.hero-icon{font-size:80px;position:absolute;right:120px;top:50%;transform:translateY(-50%);opacity:0.2}
+.btn-white{background:#fff;color:#3a6a1b;border:none;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:transform 0.15s;box-shadow:0 4px 20px rgba(0,0,0,0.15)}.btn-white:hover{transform:translateY(-2px)}
+.urgent-bar{background:#FFF8E1;border:1px solid #F9A825;border-radius:16px;padding:20px 28px;display:flex;align-items:center;gap:16px;margin:40px 0;font-size:15px;color:#5D4037}
+.urgent-bar strong{color:#E65100}
+main{max-width:1100px;margin:0 auto;padding:60px 60px}
+.section-tag{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:block}
+.section-heading{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--green-dark);margin-bottom:16px;line-height:1.2}
+.intro-text{font-size:17px;line-height:1.8;color:var(--text-muted);margin-bottom:60px;max-width:720px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:70px}
+.serv-card{background:var(--white);border-radius:20px;padding:28px 24px;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s}.serv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.serv-icon{font-size:28px;margin-bottom:14px}.serv-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--green-dark);margin-bottom:8px}.serv-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
+.phases-section{background:var(--green-dark);border-radius:32px;padding:60px;color:#fff;margin-bottom:60px}
+.phases-section .section-tag{color:var(--green-light)}.phases-section .section-heading{color:#fff}
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.phase{background:rgba(255,255,255,0.07);border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,0.1);text-align:center}
+.phase-icon{font-size:32px;margin-bottom:12px}
+.phase-title{font-weight:600;font-size:14px;color:#fff;margin-bottom:8px}
+.phase-desc{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6}
+.promise-section{background:var(--green-pale);border-radius:32px;padding:48px;margin-bottom:60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.promise-section .section-heading{color:var(--green-dark)}
+.promise-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.promise-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--text-muted);line-height:1.5}
+.promise-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.cta-bar{background:var(--green);border-radius:24px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta-bar h3{font-family:'Playfair Display',serif;font-size:28px;color:#fff;max-width:500px;line-height:1.3}
+.btn-cta{background:#fff;color:var(--green);border:none;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap;transition:transform 0.15s}.btn-cta:hover{transform:translateY(-2px)}
+footer{padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-muted)}footer a{color:var(--green);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="mindmedic.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9.76 2 8 3.76 8 6c0 1.68.94 3.14 2.32 3.88C7.84 11.04 6 13.35 6 16h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-2.65-1.84-4.96-4.32-6.12C15.06 9.14 16 7.68 16 6c0-2.24-1.76-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg></div><span class="logo-text">MindMedic</span></a>
+  <a href="mindmedic.html" class="back-btn">← Back to Home</a>
+</nav>
+<div class="hero">
+  <div class="hero-tag">Our Services</div>
+  <h1>Addiction Recovery</h1>
+  <p>A compassionate, medically supervised path to sobriety. Our holistic addiction treatment programme addresses the physical, psychological, and social dimensions of recovery.</p>
+  <a href="mindmedic.html#contact" class="btn-white">Speak to a Counsellor</a>
+  <div class="hero-icon">🌿</div>
+</div>
+<main>
+  <div class="urgent-bar">⚠️ <span>If you or someone you know is in crisis, please call us immediately: <strong>090144 42869</strong>. We are available 7 days a week.</span></div>
+  <span class="section-tag">Treatment Services</span>
+  <h2 class="section-heading">Our Addiction Treatment Services</h2>
+  <p class="intro-text">Recovery is possible. Our non-judgmental, evidence-based programme treats the whole person — not just the addiction — to build lasting sobriety and a fulfilling life.</p>
+  <div class="services-grid">
+    <div class="serv-card"><div class="serv-icon">🏥</div><div class="serv-name">Medical Detox</div><p class="serv-desc">Medically supervised detoxification to safely manage withdrawal symptoms with 24-hour clinical monitoring and support.</p></div>
+    <div class="serv-card"><div class="serv-icon">💊</div><div class="serv-name">Medication-Assisted Treatment</div><p class="serv-desc">FDA-approved medications combined with counselling to reduce cravings, prevent relapse, and support long-term recovery.</p></div>
+    <div class="serv-card"><div class="serv-icon">🧠</div><div class="serv-name">Addiction Counselling</div><p class="serv-desc">Individual and group therapy addressing the root causes of addiction, including trauma, co-occurring mental health disorders, and triggers.</p></div>
+    <div class="serv-card"><div class="serv-icon">👨‍👩‍👧</div><div class="serv-name">Family Programme</div><p class="serv-desc">Involving loved ones in the recovery process through family therapy, education sessions, and co-dependency counselling.</p></div>
+    <div class="serv-card"><div class="serv-icon">🌟</div><div class="serv-name">Aftercare Planning</div><p class="serv-desc">A personalised relapse prevention plan and ongoing alumni support to help you maintain sobriety and navigate life's challenges.</p></div>
+    <div class="serv-card"><div class="serv-icon">🤝</div><div class="serv-name">Peer Support Groups</div><p class="serv-desc">Facilitated peer recovery groups that build community, accountability, and connection with others on the same journey.</p></div>
+  </div>
+  <div class="phases-section">
+    <span class="section-tag">Phases of Treatment</span>
+    <h2 class="section-heading">Your Recovery Pathway</h2>
+    <div class="phases">
+      <div class="phase"><div class="phase-icon">🌱</div><div class="phase-title">Assessment & Detox</div><div class="phase-desc">Safe, medically supervised withdrawal management and comprehensive addiction assessment.</div></div>
+      <div class="phase"><div class="phase-icon">🔧</div><div class="phase-title">Intensive Treatment</div><div class="phase-desc">Deep therapeutic work addressing root causes, building coping skills, and establishing sobriety foundations.</div></div>
+      <div class="phase"><div class="phase-icon">🏡</div><div class="phase-title">Community Reintegration</div><div class="phase-desc">Gradual return to daily life with structured support, job coaching, and relationship rebuilding.</div></div>
+      <div class="phase"><div class="phase-icon">💪</div><div class="phase-title">Ongoing Aftercare</div><div class="phase-desc">Long-term follow-up, alumni groups, and relapse prevention to sustain recovery indefinitely.</div></div>
+    </div>
+  </div>
+  <div class="promise-section">
+    <div><span class="section-tag">Our Commitment</span><h2 class="section-heading">You Are Not Alone in This</h2><p style="font-size:16px;line-height:1.7;color:var(--text-muted)">Seeking help takes courage. We honour that courage with the most compassionate, effective, and confidential care available.</p></div>
+    <ul class="promise-list">
+      <li>Completely confidential and non-judgmental care</li>
+      <li>Personalised treatment — no one-size-fits-all programmes</li>
+      <li>Dual diagnosis treatment for co-occurring mental health conditions</li>
+      <li>Experienced, certified addiction specialists</li>
+      <li>Supportive family involvement at every stage</li>
+      <li>24/7 crisis support line available to all patients</li>
+    </ul>
+  </div>
+  <div class="cta-bar"><h3>Recovery starts with a single conversation. We're ready when you are.</h3><a href="mindmedic.html#contact" class="btn-cta">Get Help Now →</a></div>
+</main>
+<footer><span>© 2025 MindMedic Clinic & Rehabilitation Center</span><span>📍 Saidabad Colony Rd, Kurmaguda, Hyderabad &nbsp;|&nbsp; 📞 090144 42869</span><a href="mindmedic.html">← Home</a></footer>
+</body></html>
