@@ -833,23 +833,9 @@
     .footer-bottom { padding: 20px 30px; flex-direction: column; gap: 8px; }
   }
 </style>
- <script>
-    const reveals = document.querySelectorAll('.reveal');
-    function reveal() {
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add('visible');
-        }
-      }
-    }
-    window.addEventListener('scroll', reveal);
-    reveal();
-  </script>
 </head>
-<body>
+
+ <body>
 
 <!-- NAV -->
 <nav>
@@ -1189,6 +1175,25 @@
     </ul>
   </div>
 </footer>
+
+  <script>
+  const reveals = document.querySelectorAll('.reveal');
+  
+  function reveal() {
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add('visible');
+      }
+    }
+  }
+  
+  window.addEventListener('scroll', reveal);
+  reveal();
+</script>
 <div class="footer-bottom">
   <span>© 2025 MindMedic Clinic & Rehabilitation Center. All rights reserved.</span>
   <span>Privacy Policy · Terms of Service</span>
