@@ -832,6 +832,21 @@
     footer { grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 30px; }
     .footer-bottom { padding: 20px 30px; flex-direction: column; gap: 8px; }
   }
+   <script>
+    const reveals = document.querySelectorAll('.reveal');
+    function reveal() {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('visible');
+        }
+      }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal();
+  </script>
 </style>
 </head>
 <body>
